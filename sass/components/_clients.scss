@@ -1,0 +1,104 @@
+.clients {
+  // display: flex;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 767px) {
+    margin: -15px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin: -15px;
+  }
+
+  &__item {
+    @media screen and (max-width: 767px) {
+      width: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      width: calc((100% - 3 * 30px) / 3);
+      margin: 15px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 170px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    @media screen and (max-width: 479px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    @media screen and (min-width: 1200px) {
+      margin-right: 30px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: currentColor;
+    border: 1px solid $color-icon;
+    border-radius: 4px;
+    height: 90px;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__link:hover,
+  &__link:focus {
+    border: 1px solid $accent-color;
+  }
+
+  &__logo {
+    fill: $color-icon;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__link:hover &__logo,
+  &__link:focus &__logo {
+    fill: $accent-color;
+  }
+
+  &__logo--icon-one {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    width: 44.27px;
+    height: 49.23px;
+    text-align: center;
+  }
+
+  &__logo--icon-two {
+    width: 40px;
+    height: 52px;
+  }
+
+  &__logo--icon-three {
+    width: 41px;
+    height: 42.6px;
+  }
+
+  &__logo--icon-four {
+    width: 79px;
+    height: 42.02px;
+  }
+
+  &__logo--icon-five {
+    width: 59px;
+    height: 47px;
+  }
+
+  &__logo--icon-six {
+    width: 88px;
+    height: 45px;
+  }
+}

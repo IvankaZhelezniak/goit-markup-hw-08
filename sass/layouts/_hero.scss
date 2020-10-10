@@ -1,0 +1,24 @@
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: $bg-color;
+  text-align: center;
+
+  &__contact {
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    color: $primary-white-color;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36em;
+    letter-spacing: 0.06em;
+  }
+}

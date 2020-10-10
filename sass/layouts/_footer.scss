@@ -1,0 +1,38 @@
+.footer {
+  background-color: $bg-color;
+}
+
+// .footer__blocks {
+//   display: flex;
+//   align-items: baseline;
+// }
+
+.footer-logo {
+  padding-top: 60px;
+  margin-bottom: 20px;
+}
+
+.logo__footer {
+  color: $primary-white-color;
+}
+
+.logo--indents {
+  margin-top: 0;
+  padding: 0;
+}
+
+.text-footer {
+  display: block;
+  margin-bottom: 20px;
+  padding-top: 72px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $primary-white-color;
+}
+
+.footer__adress {
+  flex-shrink: 0;
+}

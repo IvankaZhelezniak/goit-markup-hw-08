@@ -1,0 +1,35 @@
+.section--services {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.services__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.services--flex {
+  display: flex;
+}
+
+.services__position {
+  position: relative;
+}
+
+.services__applications {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(47, 48, 58, 0.8);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary-white-color;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  margin: 0;
+}

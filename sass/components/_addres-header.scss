@@ -1,0 +1,65 @@
+.addres-header {
+  // display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  &__item:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &__mail:hover,
+  &__mail:focus {
+    color: $accent-color;
+  }
+
+  &__mail {
+    color: $primary-text-color;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14em;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__mail:hover,
+  &__mail:focus {
+    color: $accent-color;
+  }
+
+  &__tel {
+    color: $primary-text-color;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14em;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__tel:hover,
+  &__tel:focus {
+    color: $accent-color;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__icon-mail,
+  &__icon-smartphone {
+    width: 16px;
+    height: 12px;
+    fill: $primary-text-color;
+    margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__icon:hover &__icon-mail,
+  &__icon:focus &__icon-mail,
+  &__icon:hover &__icon-smartphone,
+  &__icon:focus &__icon-smartphone {
+    fill: $accent-color;
+  }
+}

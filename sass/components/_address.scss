@@ -1,0 +1,30 @@
+.address {
+  max-width: 231px;
+
+  padding-bottom: 60px;
+  margin-top: 0;
+  margin-right: 70px;
+
+  &__city {
+    color: $primary-white-color;
+  }
+
+  &__item-mail {
+    margin-bottom: 9px;
+  }
+
+  &__mail,
+  &__tel {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__mail,
+  &__tel,
+  &__city {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7em;
+    letter-spacing: 0.03em;
+    margin-bottom: 9px;
+  }
+}

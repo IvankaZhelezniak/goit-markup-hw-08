@@ -1,0 +1,153 @@
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin: -15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: -15px;
+  }
+
+  &__item {
+    border: 1px solid #eeeeee;
+
+    @media screen and (max-width: 767px) {
+      flex-basis: 450px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      width: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: calc((100% - 3 * 30px) / 3);
+      margin: 15px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+  }
+
+  &__projects {
+    padding: 20px 24px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    color: $title-text-color;
+    font-style: normal;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2em;
+    letter-spacing: 0.06em;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    color: $primary-text-color;
+
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.87em;
+    letter-spacing: 0.03em;
+  }
+
+  &__item--website:hover,
+  &__item--website:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--design:hover,
+  &__item--design:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--annex:hover,
+  &__item--annex:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--marketing:hover,
+  &__item--marketing:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--annex-link:hover,
+  &__item--annex-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--website-link:hover,
+  &__item--website-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--design-link:hover,
+  &__item--design-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--marketing-link:hover,
+  &__item--marketing-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item--annex-business:hover,
+  &__item--annex-business:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: $primary-white-color;
+    padding: 63px 24px;
+
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+  }
+
+  &__img:hover &__desc {
+    transform: translateY(0);
+  }
+}
