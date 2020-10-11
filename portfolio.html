@@ -16,35 +16,59 @@
   </head>
   <body>
     <!--Хедер-->
-    <header class="header header--portfolio">
-      <div class="container flexbox header-flexbox">
-        <nav class="navigation">
-          <a href="./index.html" class="logo"
-            >Web<span class="logo__header">Studio</span></a
-          >
+    <header class="header">
+      <div class="container flexbox header__container">
+        <a href="./index.html" class="link logo"
+          >Web<span class="logo__header">Studio</span></a
+        >
 
-          <ul class="list menu">
-            <li class="menu__item">
-              <a href="./index.html" class="link menu__link">Студия</a>
-            </li>
-            <li class="menu__item">
-              <a
-                href="./portfolio.html"
-                class="link menu__link menu__link--portfolio"
-                >Портфолио</a
-              >
-            </li>
-            <li class="menu__item">
-              <a href="" class="link menu__link">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <address>
+        <button
+          type="button"
+          class="menu-button"
+          aria-expanded="false"
+          aria-controls="header-menu"
+          data-menu-button
+        >
+          <svg
+            width="40"
+            height="40"
+            aria-label="Переключатель мобильного меню"
+          >
+            <use
+              class="icon-navigation-close"
+              href="./images/icons-svg/sprite.svg#icon-navigation-close"
+            ></use>
+            <use
+              class="icon-menu"
+              href="./images/icons-svg/sprite.svg#icon-navigation"
+            ></use>
+          </svg>
+        </button>
+
+        <div class="header-menu" id="header-menu" data-menu>
+          <nav class="navigation">
+            <ul class="list menu menu-list">
+              <li class="menu__item">
+                <a href="./index.html" class="link menu__link">Студия</a>
+              </li>
+              <li class="menu__item">
+                <a
+                  href="./portfolio.html"
+                  class="link menu__link menu__link--current"
+                  >Портфолио</a
+                >
+              </li>
+              <li class="menu__item">
+                <a href="" class="link menu__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
           <ul class="list addres-header">
             <li class="addres-header__item">
               <a
                 href="mailto:info@devstudio.com"
-                class="link addres-header__mail addres-header__icon"
+                class="link addres-header__icon"
               >
                 <svg class="addres-header__icon-mail">
                   <use
@@ -55,10 +79,7 @@
               >
             </li>
             <li class="addres-header__item">
-              <a
-                href="tel:+380961111111"
-                class="link addres-header__tel addres-header__icon"
-              >
+              <a href="tel:+380961111111" class="link addres-header__icon">
                 <svg class="addres-header__icon-smartphone">
                   <use
                     href="./images/icons-svg/symbol-defs.svg#icon-smartphone"
@@ -68,7 +89,7 @@
               >
             </li>
           </ul>
-        </address>
+        </div>
       </div>
     </header>
     <main>
@@ -77,13 +98,15 @@
           <!--Основной контент-->
           <!--h1 Портфолио и h2 Фильтр работ для семантики потом скроем-->
           <h2 hidden>Фильтр робот</h2>
-          <ul class="list list--buttons">
-            <li class="buttons buttons--all">Все</li>
-            <li class="buttons buttons--veb">Веб-сайты</li>
-            <li class="buttons buttons--applications">Приложения</li>
-            <li class="buttons buttons--design">Дизайн</li>
-            <li class="buttons buttons--marketing">Маркетинг</li>
-          </ul>
+          <div class="filters">
+            <ul class="list list--buttons">
+              <li class="buttons buttons--all">Все</li>
+              <li class="buttons buttons--veb">Веб-сайты</li>
+              <li class="buttons buttons--applications">Приложения</li>
+              <li class="buttons buttons--design">Дизайн</li>
+              <li class="buttons buttons--marketing">Маркетинг</li>
+            </ul>
+          </div>
 
           <ul class="portfolio list">
             <li class="item portfolio__item portfolio__item--website">
@@ -276,29 +299,30 @@
     <footer class="footer">
       <div class="container footer__blocks">
         <div class="footer__adress">
-          <div class="footer-logo">
-            <a href="./index.html" class="logo logo--indents"
-              >Web<span class="logo__footer">Studio</span></a
-            >
-          </div>
-          <address>
-            <ul class="address list">
-              <li class="address__city">г. Киев, пр-т Леси Украинки, 26</li>
-              <li class="address__item-mail">
-                <a href="mailto:info@example.com" class="link address__mail"
-                  >info@example.com</a
-                >
-              </li>
-              <li>
-                <a href="tel:+380991111111" class="link address__tel"
-                  >+38 099 111 11 11</a
-                >
-              </li>
-            </ul>
+          <a href="./index.html" class="logo logo--indents"
+            >Web<span class="logo__footer">Studio</span></a
+          >
+
+          <address class="address-city">
+            г. Киев, пр-т Леси Украинки, 26
           </address>
+
+          <ul class="address list">
+            <li class="address__item-mail">
+              <a href="mailto:info@example.com" class="link address__mail"
+                >info@example.com</a
+              >
+            </li>
+            <li>
+              <a href="tel:+380991111111" class="link address__tel"
+                >+38 099 111 11 11</a
+              >
+            </li>
+          </ul>
         </div>
-        <div>
-          <b class="text-footer">присоединяйтесь</b>
+
+        <div class="blok-links">
+          <h3 class="text-footer">присоединяйтесь</h3>
           <ul class="list social social--footer">
             <li class="social__item">
               <a
@@ -350,20 +374,106 @@
             </li>
           </ul>
         </div>
+
         <form class="form-footer">
-          <b class="form-footer__title">Подпишитесь на рассылку</b>
-          <div class="form-footer__subscription">
-            <input
-              class="form-footer__input"
-              type="email"
-              name="email"
-              autocomplete="off"
-              placeholder="E-mail"
-            />
-            <button type="submit" class="btn btn--footer">Подписаться</button>
+          <div class="form-footer__mailing">
+            <label for="e-mail" class="form-footer__title"
+              >Подпишитесь на рассылку</label
+            >
+
+            <div class="form-footer__subscription">
+              <input
+                class="form-footer__input"
+                type="email"
+                name="e-mail"
+                autocomplete="off"
+                placeholder="E-mail"
+              />
+              <button type="button" class="btn btn--footer">Подписаться</button>
+            </div>
           </div>
         </form>
       </div>
     </footer>
+
+    <!--Модальное окно-->
+
+    <div class="backdrop backdrop--is-hidden" data-modal>
+      <form class="modal">
+        <button class="button-close">
+          <svg data-modal-close class="icon-close" width="12" height="12">
+            <use href="./images/icons-svg/symbol-defs.svg#close"></use>
+          </svg>
+        </button>
+        <strong class="modal__text"
+          >Оставьте свои данные, мы вам перезвоним</strong
+        >
+        <div class="modal__field">
+          <label for="name" class="modal__label">Имя</label>
+          <div class="modal__wrap">
+            <input class="modal__input" type="text" name="name" id="name" />
+            <svg class="modal__icon">
+              <use href="./images/icons-svg/sprite.svg#icon-person"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="modal__field">
+          <label for="tel" class="modal__label">Телефон</label>
+          <div class="modal__wrap">
+            <input class="modal__input" type="tel" name="tel" id="tel" />
+            <svg class="modal__icon">
+              <use href="./images/icons-svg/sprite.svg#icon-phone"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="modal__field">
+          <label for="email" class="modal__label">Почта</label>
+          <div class="modal__wrap">
+            <input class="modal__input" type="email" name="e-mail" id="email" />
+            <svg class="modal__icon">
+              <use href="./images/icons-svg/sprite.svg#icon-email"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="modal__field">
+          <label for="comment" class="modal__label">Комментарий</label>
+          <textarea
+            class="modal__textarea"
+            name="comment"
+            id="comment"
+            rows="8"
+            placeholder="Введите текст"
+          >
+          </textarea>
+        </div>
+
+        <div class="modal__custom-check">
+          <label class="modal__checkbox">
+            <input
+              type="checkbox"
+              name="policy"
+              id="checkbox"
+              class="modal__check-input"
+            />
+            <span class="modal__check-box"></span>
+
+            <span class="modal__text-check"
+              >Соглашаюсь с рассылкой и принимаю
+              <a href="" class="modal__link-check">Условия договора</a></span
+            >
+          </label>
+        </div>
+
+        <div class="sumbit-btn">
+          <button class="btn--form" data-modal-close>Отправить</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="./js/menu.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
