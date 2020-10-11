@@ -1,30 +1,18 @@
 .address {
-  max-width: 231px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
 
-  padding-bottom: 60px;
-  margin-top: 0;
-  margin-right: 70px;
-
-  &__city {
+  & .link {
     color: $primary-white-color;
   }
-
-  &__item-mail {
-    margin-bottom: 9px;
+  & .link:hover,
+  & .link:focus {
+    color: $accent-color;
   }
 
-  &__mail,
-  &__tel {
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  &__mail,
-  &__tel,
-  &__city {
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.7em;
-    letter-spacing: 0.03em;
+  &__item-mail:not(:last-child) {
     margin-bottom: 9px;
   }
 }

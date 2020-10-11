@@ -1,5 +1,10 @@
 .btn--hero {
   padding: 10px 32px;
+  cursor: pointer;
+
+  @include screen-size(tablet) {
+    margin-top: 30px;
+  }
 }
 
 .btn {
@@ -18,8 +23,4 @@
   line-height: 1.87em;
   letter-spacing: 0.06em;
   text-align: center;
-}
-
-.btn--form {
-  padding: 10px 55px;
 }

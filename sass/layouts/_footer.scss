@@ -1,38 +1,80 @@
 .footer {
   background-color: $bg-color;
+
+  & .logo {
+    display: block;
+    margin-bottom: 20px;
+    margin-right: auto;
+  }
+  & .logo__footer {
+    color: $primary-white-color;
+  }
+
+  &__adress {
+    // flex-shrink: 0;  потом можеть использовать для min-width: 1200;
+
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include screen-size(tablet) {
+      margin-right: 165px;
+    }
+    @include screen-size(desktop) {
+      text-align: left;
+      margin-right: 70px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__blocks {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include screen-size(tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+    }
+    @include screen-size(desktop) {
+      flex-direction: row;
+      align-items: baseline;
+    }
+  }
 }
 
-// .footer__blocks {
-//   display: flex;
-//   align-items: baseline;
-// }
-
-.footer-logo {
-  padding-top: 60px;
-  margin-bottom: 20px;
-}
-
-.logo__footer {
+.address-city {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.71;
   color: $primary-white-color;
+  margin-bottom: 9px;
 }
 
-.logo--indents {
-  margin-top: 0;
-  padding: 0;
+.blok-links {
+  width: 206px;
+  margin-bottom: 60px;
+
+  @include screen-size(desktop) {
+    margin-right: 93px;
+    margin-bottom: 0;
+  }
 }
 
 .text-footer {
-  display: block;
-  margin-bottom: 20px;
-  padding-top: 72px;
+  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $primary-white-color;
-}
 
-.footer__adress {
-  flex-shrink: 0;
+  margin-bottom: 20px;
+  text-align: center;
 }

@@ -2,69 +2,56 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 94px 15px;
-  max-width: 768px;
   width: 100%;
-
-  @media screen and (min-width: 768px) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  // width: 100%;
-  // height: 100%;
-  // max-width: 768px;
-  // width: 1600px;
-  // height: 1024px;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  // Свойства анимации
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-  overflow: auto;
+  overflow-y: scroll;
 }
 
-.backdrop--is-hidden {
+.backdrop.backdrop--is-hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
+  visibility: hidden;
+  & .modal {
+    transform: translate(-50%, -50%) scale(0.1);
+  }
 }
 
 .modal {
-  position: relative;
-  max-width: 450px;
-  width: 100%;
-  // margin-right: auto;
-  // margin-left: auto;
-  margin: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 450px;
+  padding: 40px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  /* свойства анимации */
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 450px;
+  @media screen and (max-width: 480px) {
     width: 100%;
   }
 
-  background-color: $primary-white-color;
-
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.form {
-  // @media screen and (max-width: 1199px) {
-  //   width: 370px;
-  // }
-
-  @media screen and (min-width: 1200px) {
-    width: 448px;
+  @include screen-size(desktop) {
+    width: 530px;
+    height: 610px;
   }
-
-  padding: 40px;
-  margin: 0;
 
   &__text {
     font-weight: 700;
@@ -74,164 +61,188 @@
     letter-spacing: 0.03em;
     color: $title-text-color;
 
-    margin-bottom: 12px;
-
-    display: inline-block;
-  }
-
-  &__field {
-    position: relative;
-    width: 100%;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__input {
     margin: 0;
-    padding: 12px;
-    padding-right: 15px;
-    padding-left: 42px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    outline-color: transparent;
+    margin-bottom: 12px;
+    @include screen-size(desktop) {
+      line-height: 1.15;
+    }
 
-    color: $title-text-color;
+    // display: inline-block;
   }
 
-  &__label {
-    margin-bottom: 4px;
-
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16em;
-    letter-spacing: 0.01em;
+  &__wrap {
+    position: relative;
+    display: flex;
+    width: 100%;
   }
 
   &__icon {
-    position: absolute;
-    top: 65%;
-    left: 12px;
-
-    transform: translateY(-50%);
-
-    display: inline-block;
     width: 18px;
     height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
     fill: $title-text-color;
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  &__comment {
-    margin-bottom: 20px;
+  &__field {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+
+  &__field:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    padding: 0;
+    padding-left: 40px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline-color: $accent-color;
+  }
+
+  &__input:focus + &__icon {
+    fill: $accent-color;
   }
 
   &__textarea {
+    resize: none;
     padding: 12px 16px;
-
+    width: 100%;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    outline-color: $accent-color;
   }
 
   &__textarea::placeholder {
-    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
     font-size: 12px;
-    line-height: 1.16em;
+    line-height: 1.17;
     letter-spacing: 0.01em;
-
     color: rgba(117, 117, 117, 0.5);
-  }
-
-  &__input:not(:placeholder-shown) {
-    border-color: $accent-color;
-  }
-  &__input:focus {
-    outline-color: $accent-color;
-  }
-
-  &__textarea:not(:placeholder-shown) {
-    border-color: $accent-color;
-  }
-
-  &__textarea:focus {
-    outline-color: $accent-color;
-  }
-
-  &__input:not(:placeholder-shown) ~ &__icon,
-  &__input:focus ~ &__icon {
-    fill: $accent-color;
   }
 
   /*  Чекбоксы */
 
+  &__custom-check {
+    margin-top: 20px;
+  }
+
   &__checkbox {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 30px;
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: #757575;
+    align-items: center;
 
-    position: relative;
-
-    padding-left: 1.2em;
+    @include screen-size(desktop) {
+      font-size: 14px;
+      line-height: 1.71;
+    }
   }
 
   &__text-check {
+    font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71em;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.03em;
+    color: #757575;
 
     margin-left: 8px;
   }
 
   &__link-check {
+    text-decoration: underline;
     color: $accent-color;
 
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.71em;
     letter-spacing: 0.03em;
   }
 
   &__check-input {
+    position: absolute;
     width: 1px;
     height: 1px;
-    overflow: hidden;
+    margin: -1px;
+    border: 0;
+    padding: 0;
     clip: rect(0 0 0 0);
-
-    position: absolute;
+    overflow: hidden;
   }
 
   &__check-box {
-    position: absolute;
+    display: inline-block;
     width: 16px;
     height: 15px;
-    top: 3px;
-    margin-left: -1.2em;
-
-    background-image: url(../images/icons-svg/check-vector.svg);
+    border: 2px solid #000;
+    border-radius: 1px;
   }
 
   &__check-input:checked + &__check-box {
     background-image: url(../images/icons-svg/icon-check.svg);
+    background-color: $accent-color;
+    background-size: contain;
+    background-origin: border-box;
+    border-color: transparent;
   }
 }
 
-.icon-close {
+.button-close {
   position: absolute;
-  top: 8px;
   right: 8px;
+  top: 8px;
+  padding: 0;
+  border-radius: 50%;
   width: 30px;
   height: 30px;
-  outline: transparent;
-  fill: $primary-white-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  cursor: pointer;
 
-  &:hover,
-  &:focus {
+  & .icon-close {
+    width: 12px;
+    height: 12px;
+    fill: #000;
+    // Свойства анимации
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover .icon-close,
+  &:focus .icon-close {
     fill: $accent-color;
   }
+}
+
+.submit-btn {
+  margin-top: 30px;
+}
+
+.btn--form {
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: $accent-color;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  color: $primary-white-color;
+
+  margin-top: 30px;
 }

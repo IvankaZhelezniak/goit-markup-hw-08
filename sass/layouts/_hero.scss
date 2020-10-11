@@ -1,24 +1,33 @@
 .hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
   background-color: $bg-color;
-  text-align: center;
 
   &__contact {
-    max-width: 696px;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+
+    @include screen-size(desktop) {
+      height: 600px;
+    }
   }
 
   &__title {
-    margin-top: 0;
-    margin-bottom: 40px;
-
-    color: $primary-white-color;
-    text-transform: uppercase;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36em;
+    font-size: 26px;
+    line-height: 1.61;
+    text-align: center;
     letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $primary-white-color;
+    margin-bottom: 30px;
+    /* сбросила отступ между шапкой и героем */
+    margin-top: 0;
+
+    @include screen-size(desktop) {
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 }
