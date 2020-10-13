@@ -1037,6 +1037,18 @@ textarea {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .portfolio__img-contain {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .portfolio__img-contain {
+    width: 100%;
+  }
+}
+
 .portfolio__link {
   display: block;
   text-decoration: none;
